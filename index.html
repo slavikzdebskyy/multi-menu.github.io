@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Multi Menu Example</title>
+	<link href="https://fonts.googleapis.com/css?family=Heebo:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/multi.min.css">
+</head>
+<body>
+<div class="container">
+	<h2>Organic Food</h2>
+	<div id="menu-mobile" class="menu-mobile close-mobile">	
+	<div class="box-1"></div>
+	<div class="box-2"></div>
+	<div class="box-3"></div>
+	</div>
+	<nav id="menu" class="menu">
+		<nav id="navi-menu">
+			<a onclick="clearAllSorts()">ALL</a>
+		</nav>
+		<div class="menu-wrap">
+			<ul data-menu="main" class="menu-up active">
+				<li class="menu-item" onclick="sortCategory('vegetables')"><a href="#" class="menu-link" data-submenu="submenu-1">Vegetables</a></li>
+				<li class="menu-item" onclick="sortCategory('fruits')"><a href="#" class="menu-link" data-submenu="submenu-2">Fruits</a></li>
+				<li class="menu-item" onclick="sortCategory('grains')"><a href="#" class="menu-link" data-submenu="submenu-3">Grains</a></li>
+				<li class="menu-item" onclick="sortCategory('')"><a href="#" class="menu-link" data-submenu="submenu-4">Mylk & Drinks</a></li>
+			</ul>
+			<ul data-menu="submenu-1" class="menu-up">
+				<li class="menu-item" onclick="sortByCategory('stalk')"><a href="#" class="menu-link">Stalk Vegetables</a></li>
+				<li class="menu-item" onclick="sortByCategory('roots-and-seeds')"><a href="#" class="menu-link">Roots & Seeds</a></li>
+				<li class="menu-item" onclick="sortByCategory('cabages')"><a href="#" class="menu-link">Cabbages</a></li>
+				<li class="menu-item" onclick="sortByCategory('salads')"><a href="#" class="menu-link">Salad Greens</a></li>
+				<li class="menu-item" onclick="sortByCategory('muchrooms')"><a href="#" class="menu-link">Mushrooms</a></li>
+				<li class="menu-item" onclick="sortByCategory('')"><a href="#" class="menu-link" data-submenu="submenu-1-1">Sale %</a></li>
+			</ul>
+			<ul data-menu="submenu-1-1" class="menu-up">
+				<li class="menu-item"><a href="#" class="menu-link">Fair Trade Roots</a></li>
+				<li class="menu-item"><a href="#" class="menu-link">Dried Veggies</a></li>
+				<li class="menu-item"><a href="#" class="menu-link">Our Brand</a></li>
+				<li class="menu-item"><a href="#" class="menu-link">Homemade</a></li>					
+			</ul>
+			<ul data-menu="submenu-2" class="menu-up">
+				<li class="menu-item" onclick="sortByCategory('citrus')"><a href="#" class="menu-link">Citrus Fruits</a></li>
+				<li class="menu-item" onclick="sortByCategory('barries')"><a href="#" class="menu-link">Berries</a></li>				
+				<li class="menu-item" onclick="sortByCategory('tropical')"><a href="#" class="menu-link">Tropical Fruits</a></li>
+				<li class="menu-item" onclick="sortByCategory('melons')"><a href="#" class="menu-link">Melons</a></li>
+				<li class="menu-item" onclick="sortByCategory('')"><a href="#" class="menu-link" data-submenu="submenu-2-2">Special Selection</a></li>
+			</ul>
+			<ul data-menu="submenu-2-2" class="menu-up">
+				<li class="menu-item"><a href="#" class="menu-link">Exotic Mixes</a></li>
+				<li class="menu-item"><a href="#" class="menu-link">Wild Pick</a></li>				
+				<li class="menu-item"><a href="#" class="menu-link">Vitamin Boosters</a></li>
+			</ul>
+			<ul data-menu="submenu-3" class="menu-up">
+				<li class="menu-item" onclick="sortByCategory('buckwheat')"><a href="#" class="menu-link">Buckwheat</a></li>
+				<li class="menu-item" onclick="sortByCategory('millet')"><a href="#" class="menu-link">Millet</a></li>
+				<li class="menu-item" onclick="sortByCategory('quinoa')"><a href="#" class="menu-link">Quinoa</a></li>
+				<li class="menu-item" onclick="sortByCategory('wild-rice')"><a href="#" class="menu-link">Wild Rice</a></li>
+				<li class="menu-item" onclick="sortByCategory('durum')"><a href="#" class="menu-link">Durum Wheat</a></li>
+				<li class="menu-item" onclick="sortByCategory('')"><a href="#" class="menu-link" data-submenu="submenu-3-1">Promo Packs</a></li>
+			</ul>
+			<ul data-menu="submenu-3-1" class="menu-up">
+				<li class="menu-item"><a href="#" class="menu-link">Starter Kit</a></li>
+				<li class="menu-item"><a href="#" class="menu-link">The Essential 8</a></li>				
+				<li class="menu-item"><a href="#" class="menu-link">Bolivian Secrets</a></li>
+				<li class="menu-item"><a href="#" class="menu-link">Flour Packs</a></li>
+			</ul>
+			<ul data-menu="submenu-4" class="menu-up">
+				<li class="menu-item"><a href="#" class="menu-link">Grain Mylks</a></li>
+				<li class="menu-item"><a href="#" class="menu-link">Seed Mylks</a></li>
+				<li class="menu-item"><a href="#" class="menu-link">Nut Mylks</a></li>
+				<li class="menu-item"><a href="#" class="menu-link">Nutri Drinks</a></li>
+				<li class="menu-item"><a href="#" class="menu-link" data-submenu="submenu-4-1">Selection</a></li>					
+			</ul>
+			<ul data-menu="submenu-4-1" class="menu-up">
+				<li class="menu-item"><a href="#" class="menu-link">Nut Mylk Packs</a></li>
+				<li class="menu-item"><a href="#" class="menu-link">Amino Acid Heaven</a></li>				
+				<li class="menu-item"><a href="#" class="menu-link">Allergy Free</a></li>				
+			</ul>
+		</div>
+	</nav>	
+</div>
+<div class="foods" id="foods">
+	<img src="./images/vegetables/cabbages/cabbages-1.jpg" alt="cabages" class="cabages">
+	<img src="./images/vegetables/cabbages/cabbages-2.jpg" alt="cabages" class="cabages">
+	<img src="./images/vegetables/cabbages/cabbages-3.jpg" alt="cabages" class="cabages">
+	<img src="./images/vegetables/cabbages/cabbages-4.jpg" alt="cabages" class="cabages">
+	<img src="./images/vegetables/cabbages/cabbages-5.jpg" alt="cabages" class="cabages">
+	<img src="./images/vegetables/mushrooms/mushrooms-1.jpg" alt="muchrooms" class="muchrooms">
+	<img src="./images/vegetables/mushrooms/mushrooms-2.jpg" alt="muchrooms" class="muchrooms">
+	<img src="./images/vegetables/mushrooms/mushrooms-3.jpeg" alt="muchrooms" class="muchrooms">
+	<img src="./images/vegetables/mushrooms/mushrooms-4.jpg" alt="muchrooms" class="muchrooms">
+	<img src="./images/vegetables/mushrooms/mushrooms-5.jpg" alt="muchrooms" class="muchrooms">
+	<img src="./images/vegetables/mushrooms/mushrooms-6.png" alt="muchrooms" class="muchrooms">
+	<img src="./images/vegetables/mushrooms/mushrooms-7.jpg" alt="muchrooms" class="muchrooms">
+	<img src="./images/vegetables/mushrooms/mushrooms-8.jpg" alt="muchrooms" class="muchrooms">
+	<img src="./images/vegetables/roots-and-seeds/roots-and-seets-1.jpg" alt="roots-and-seeds" class="roots-and-seeds">
+	<img src="./images/vegetables/roots-and-seeds/roots-and-seets-2.jpg" alt="roots-and-seeds" class="roots-and-seeds">
+	<img src="./images/vegetables/roots-and-seeds/roots-and-seets-3.jpg" alt="roots-and-seeds" class="roots-and-seeds">
+	<img src="./images/vegetables/roots-and-seeds/roots-and-seets-4.jpg" alt="roots-and-seeds" class="roots-and-seeds">
+	<img src="./images/vegetables/roots-and-seeds/roots-and-seets-5.jpg" alt="roots-and-seeds" class="roots-and-seeds">
+	<img src="./images/vegetables/roots-and-seeds/roots-and-seets-6.jpg" alt="roots-and-seeds" class="roots-and-seeds">
+	<img src="./images/vegetables/roots-and-seeds/roots-and-seets-7.jpg" alt="roots-and-seeds" class="roots-and-seeds">
+	<img src="./images/vegetables/roots-and-seeds/roots-and-seets-8.jpg" alt="roots-and-seeds" class="roots-and-seeds">
+	<img src="./images/vegetables/roots-and-seeds/roots-and-seets-9.jpg" alt="roots-and-seeds" class="roots-and-seeds">
+	<img src="./images/vegetables/roots-and-seeds/roots-and-seets-11.jpg" alt="roots-and-seeds" class="roots-and-seeds">
+	<img src="./images/vegetables/roots-and-seeds/roots-and-seets-12.jpg" alt="roots-and-seeds" class="roots-and-seeds">
+	<img src="./images/vegetables/roots-and-seeds/roots-and-seets-13.jpg" alt="roots-and-seeds" class="roots-and-seeds">
+	<img src="./images/vegetables/roots-and-seeds/roots-and-seets-10.jpg" alt="roots-and-seeds" class="roots-and-seeds">
+	<img src="./images/vegetables/salads/salad-greens-2.jpeg" alt="salads" class="salads">
+	<img src="./images/vegetables/salads/salad-greens-3.jpg" alt="salads" class="salads">
+	<img src="./images/vegetables/salads/salad-greens-4.jpg" alt="salads" class="salads">
+	<img src="./images/vegetables/salads/salad-greens-5.jpg" alt="salads" class="salads">
+	<img src="./images/vegetables/salads/salad-greens-6.jpg" alt="salads" class="salads">
+	<img src="./images/vegetables/salads/salad-greens-7.jpg" alt="salads" class="salads">
+	<img src="./images/vegetables/stalk/stalk_v_1.jpg" alt="stalk" class="stalk">
+	<img src="./images/vegetables/stalk/stalk_v_2.jpg" alt="stalk" class="stalk">
+	<img src="./images/vegetables/stalk/stalk_v_3.jpg" alt="stalk" class="stalk">
+	<img src="./images/vegetables/stalk/stalk_v_4.jpg" alt="stalk" class="stalk">
+	<img src="./images/vegetables/stalk/stalk_v_5.jpg" alt="stalk" class="stalk">
+	<img src="./images/fruits/berries/berries-1.jpg" alt="barries" class="barries">
+	<img src="./images/fruits/berries/berries-2.jpg" alt="barries" class="barries">
+	<img src="./images/fruits/berries/berries-3.jpg" alt="barries" class="barries">
+	<img src="./images/fruits/berries/berries-4.jpg" alt="barries" class="barries">
+	<img src="./images/fruits/berries/berries-5.jpg" alt="barries" class="barries">
+	<img src="./images/fruits/berries/berries-6.jpg" alt="barries" class="barries">
+	<img src="./images/fruits/citrus/citrus-1.jpg" alt="citrus" class="citrus">
+	<img src="./images/fruits/citrus/citrus-2.jpg" alt="citrus" class="citrus">
+	<img src="./images/fruits/citrus/citrus-3.jpg" alt="citrus" class="citrus">
+	<img src="./images/fruits/citrus/citrus-4.jpg" alt="citrus" class="citrus">
+	<img src="./images/fruits/citrus/citrus-5.jpg" alt="citrus" class="citrus">
+	<img src="./images/fruits/citrus/citrus-6.jpg" alt="citrus" class="citrus">
+	<img src="./images/fruits/citrus/citrus-7.jpg" alt="citrus" class="citrus">
+	<img src="./images/fruits/melons/melons-1.jpg" alt="melons" class="melons">
+	<img src="./images/fruits/melons/melons-3.jpg" alt="melons" class="melons">
+	<img src="./images/fruits/melons/melons-4.jpg" alt="melons" class="melons">
+	<img src="./images/fruits/melons/melons-2.jpg" alt="melons" class="melons">
+	<img src="./images/fruits/tropical/tropiacal-fruits-1.jpg" alt="tropical" class="tropical">	
+	<img src="./images/fruits/tropical/tropiacal-fruits-3.jpg" alt="tropical" class="tropical">
+	<img src="./images/fruits/tropical/tropiacal-fruits-4.jpeg" alt="tropical" class="tropical">
+	<img src="./images/fruits/tropical/tropiacal-fruits-5.jpg" alt="tropical" class="tropical">
+	<img src="./images/fruits/tropical/tropiacal-fruits-6.jpeg" alt="tropical" class="tropical">
+	<img src="./images/grains/buchweat.jpg" alt="buckwheat" class="buckwheat">
+	<img src="./images/grains/millet.jpg" alt="millet" class="millet">
+	<img src="./images/grains/quinoa.jpg" alt="quinoa" class="quinoa">
+	<img src="./images/grains/wild-rice.jpg" alt="wild-rice" class="wild-rice">
+	<img src="./images/grains/durum.jpg" alt="durum" class="durum">
+
+</div>
+<script src="js/main.js"></script>	
+</body>
+</html>
